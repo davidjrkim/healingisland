@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Healing Island</title>
+        <link rel="stylesheet" type="text/css" href="/css/main-css.css" />
+        <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&display=swap&subset=korean" rel="stylesheet" />
+        <link href="https://blokkfontcom-losgordos.netdna-ssl.com/v2/blokkfont.css" rel="stylesheet" type="text/css" />
+
+        <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+        <script type="text/javascript" src="engine1/jquery.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="engine5/style.css" />
+        <script type="text/javascript" src="engine5/jquery.js"></script>
+
+        <script src="js/jquery-3.4.1.min.js"></script>
+
+        <script src="https://kit.fontawesome.com/31648eb95d.js" crossorigin="anonymous"></script>
+
+        <style>
+            .wrap {
+                position: absolute;
+                left: 0;
+                bottom: 40px;
+                width: 288px;
+                height: 132px;
+                margin-left: -144px;
+                text-align: left;
+                overflow: hidden;
+                font-size: 12px;
+                font-family: "Malgun Gothic", dotum, "돋움", sans-serif;
+                line-height: 1.5;
+            }
+            .wrap * {
+                padding: 0;
+                margin: 0;
+            }
+            .wrap .info {
+                width: 286px;
+                height: 120px;
+                border-radius: 5px;
+                border-bottom: 2px solid #ccc;
+                border-right: 1px solid #ccc;
+                overflow: hidden;
+                background: #fff;
+            }
+            .wrap .info:nth-child(1) {
+                border: 0;
+                box-shadow: 0px 1px 2px #888;
+            }
+            .info .title {
+                padding: 5px 0 0 10px;
+                height: 30px;
+                background: #eee;
+                border-bottom: 1px solid #ddd;
+                font-size: 18px;
+                font-weight: bold;
+            }
+            .info .close {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                color: #888;
+                width: 17px;
+                height: 17px;
+                background: url("http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png");
+            }
+            .info .close:hover {
+                cursor: pointer;
+            }
+            .info .body {
+                position: relative;
+                overflow: hidden;
+            }
+            .info .desc {
+                position: relative;
+                margin: 13px 0 0 90px;
+                height: 75px;
+            }
+            .desc .ellipsis {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .desc .jibun {
+                font-size: 11px;
+                color: #888;
+                margin-top: -2px;
+            }
+            .info .img {
+                position: absolute;
+                top: 6px;
+                left: 5px;
+                width: 73px;
+                height: 71px;
+                border: 1px solid #ddd;
+                color: #888;
+                overflow: hidden;
+            }
+            .info:after {
+                content: "";
+                position: absolute;
+                margin-left: -12px;
+                left: 50%;
+                bottom: 0;
+                width: 22px;
+                height: 12px;
+                background: url("http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png");
+            }
+
+            body.dark .info:after {
+                content: "";
+                position: absolute;
+                margin-left: -12px;
+                left: 50%;
+                bottom: 0;
+                width: 22px;
+                height: 12px;
+                background: url("/img/vertex_white.png");
+            }
+            .info .link {
+                color: #5085bb;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="mom">
+                <div class="logo-nav">
+                    <a href="index.html"><img src="img/main-logo.png" alt="logo"/></a>
+                </div>
+
+                <div class="modes-sick">
+                    <div class="item lang">
+                        <input class="chb" type="checkbox" id="F" /><img src="img/Arrow.png" class="arrow" />
+                        <label for="F">Lang</label>
+                        <ul>
+                            <li><a href="ENG/index.html">ENG</a></li>
+                            <li><a href="JAN/index.html">JPN</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="dark-mode">
+                        <input type="checkbox" class="checkbox" id="chk" />
+                        <label class="label" for="chk">
+                            <i class="fas fa-moon"></i>
+                            <i class="fas fa-sun"></i>
+                            <div class="ball"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <nav class="kimskim ">
+                <ul class="main-nav">
+                    <li>
+                        <a href="vision.html">비젼&미션</a>
+                        <ul>
+                            <li><a href="ceo.html">병원소개</a></li>
+                            <li><a href="andrew.html">대표원장 인사</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="system.html">치료 시스템</a>
+                        <ul>
+                            <li><a href="system.html">자기장 온열치료</a></li>
+                            <li>
+                                <a href="림프.html">림프파동 미네랄<br />에센스 마사지</a>
+                            </li>
+                            <li><a href="muz.html">음향파동 온열요법</a></li>
+                            <li><a href="meth.html">약침 요법</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="진료과목.html">진료 과목</a>
+                        <ul>
+                            <li><a href="진료과목.html">생활습관병 클리닉</a></li>
+                            <li><a href="파동.html">추나요법/척추통증 클리닉</a></li>
+                            <li><a href="stress.html">스트레스 클리닉</a></li>
+                            <li><a href="detox.html">해독 클리닉</a></li>
+                            <li><a href="diet.html">슬림 다이어트 클리닉</a></li>
+                            <li><a href="age.html">안티에이징 클리닉</a></li>
+                            <li><a href="meditate.html">호흡명상요법 클리닉</a></li>
+                        </ul>
+                    </li>
+                    <li class="long-nav">
+                        <a href="system-test.html">검사 시스템</a>
+                        <ul>
+                            <li><a href="hart.html">맥진</a></li>
+                            <li><a href="body-stuff.html">체성분 분석 검사</a></li>
+                            <li>
+                                <a href="blud-vesul.html">혈관 건강 지수 측정<br />(모세혈관 검사)</a>
+                            </li>
+                            <li><a href="auto-sense.html">자율신경 균형 검사</a></li>
+                            <li><a href="o-yo.html">요오드 검사</a></li>
+                            <li><a href="ph.html">pH 검사</a></li>
+                            <li><a href="sult.html">염도 측정</a></li>
+                            <li><a href="tox.html">산소포화도 검사</a></li>
+                            <li><a href="body-temp.html">체온 검사</a></li>
+                            <li><a href="blud-pr.html">혈압 검사</a></li>
+                            <li><a href="blud-sugar.html">혈당 검사</a></li>
+                        </ul>
+                    </li>
+                    <li class="long-nav2 two-line-nav">
+                        <a href="products.html">치료 제품</a>
+                        <div class="nav-two">
+                            <div class="inner-nav-one">
+                                <ul>
+                                    <li><a href="nuguna.html">누구나365</a></li>
+                                    <li><a href="eon.html">힐링 아일랜드 이온 미네랄</a></li>
+                                    <li><a href="rc.html">RC 발란스</a></li>
+                                    <li><a href="ballans.html">몸의 균형을 위한 영양</a></li>
+                                    <li><a href="go.html">황찬고</a></li>
+                                    <li><a href="pach.html">바이오 힐링 패치</a></li>
+                                    <li><a href="water.html">바나듐 워터</a></li>
+                                    <li><a href="one.html">간청원</a></li>
+                                    <li><a href="dan.html">후코이단</a></li>
+                                </ul>
+
+                                <div class="inner-nav-two">
+                                    <ul>
+                                        <li><a href="ball.html">한방해독환</a></li>
+                                        <li><a href="g.html">엘골인G(항암해독)</a></li>
+                                        <li><a href="web.html">화이버 450(대사해독)</a></li>
+                                        <li><a href="green.html">햄프 함초</a></li>
+                                        <li><a href="leser.html">광역학 레이저 워치</a></li>
+                                        <li>
+                                            <a href="sio.html">수용성 규소, 시오-3<br />(Sio-3)</a>
+                                        </li>
+                                        <li><a href="lunch.html">발효 골고루 한끼</a></li>
+                                        <li><a href="gen.html">플라스마로겐</a></li>
+                                        <li><a href="ko-med.html">발효 한약</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="contact.html">지점안내</a>
+                        <ul>
+                            <li><a href="contact.html">주소</a></li>
+                            <li><a href="mailing.html">연락처</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="home home-intro">
+            <h5>힐링아일랜드 정원</h5>
+            <h1>겨울에도 봄이있는 제주에서</h1>
+            <h3>의료법인 힐링아일랜드 한의원</h3>
+        </div>
+
+        <div class="andy">
+            <a href="ceo.html">
+                <div class="ab">
+                    <h2>병원소개</h2>
+                    <p><br />내용확인</p>
+                </div>
+            </a>
+            <a href="andrew.html">
+                <div class="ab">
+                    <h2>대표원장 인사</h2>
+                    <p><br />내용확인</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="con-con">
+        
+
+            <main id="main">
+                <div class="main-con">
+                    <div>
+                        <div class="sec2">
+                            <!-- Start -->
+                            <div id="wowslider-container1">
+                                <div class="ws_images">
+                                    <ul>
+                                        <li>
+                                            <a href="파동.html"><img src="data1/images/1.jpg" alt="추나요법으로 디스크 수술대치" title="" id="wows1_0"/></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.youtube.com/channel/UC9omLo9JiqgPcfFrwQHDDQQ/?guided_help_flow=5" target="_blank"><img src="data1/images/__fin.jpg" alt="youtube" title="" id="wows1_1"/></a>
+                                        </li>
+                                        <li>
+                                            <a href="/img/캠프.jpg" target="_black"><img src="data1/images/_0.jpg" alt="healing camp" title="" id="wows1_2"/></a>
+                                        </li>
+                                        <li>
+                                            <a href="quantum.html"><img src="data1/images/_1.jpg" alt="양자 파동 의학의 대가에게 진료 받아보세요" title="" id="wows1_3"/></a>
+                                        </li>
+                                        <li>
+                                            <a href="ceo.html"><img src="data1/images/host.jpg" alt="" title="" id="wows1_4"/></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="ws_bullets">
+                                    <div>
+                                        <a href="#" title=""
+                                            ><span><img src="data1/tooltips/1.jpg" alt="" />1</span></a
+                                        >
+                                        <a href="#" title=""
+                                            ><span><img src="data1/tooltips/__fin.jpg" alt="" />2</span></a
+                                        >
+                                        <a href="#" title=""
+                                            ><span><img src="data1/tooltips/_0.jpg" alt="" />3</span></a
+                                        >
+                                        <a href="#" title=""
+                                            ><span><img src="data1/tooltips/_1.jpg" alt="" />4</span></a
+                                        >
+                                        <a href="#" title=""
+                                            ><span><img src="data1/tooltips/host.jpg" alt="" />5</span></a
+                                        >
+                                    </div>
+                                </div>
+                                <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">responsive slider</a> by WOWSlider.com v8.8m</div>
+                                <div class="ws_shadow"></div>
+                            </div>
+                            <script type="text/javascript" src="engine1/wowslider.js"></script>
+                            <script type="text/javascript" src="engine1/script.js"></script>
+                            <!-- End -->
+                        </div>
+
+                        <div class="sec1">
+                            <!-- Start -->
+                            <div id="wowslider-container5">
+                                <div class="ws_images">
+                                    <ul>
+                                        <li>
+                                            <a href="파동.html"><img src="data5/images/_0.jpg" alt="" title="" id="wows5_0"/></a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.youtube.com/channel/UC9omLo9JiqgPcfFrwQHDDQQ/?guided_help_flow=5" target="_blank"><img src="data5/images/_sm.jpg" alt="" title="" id="wows5_1"/></a>
+                                        </li>
+                                        <li>
+                                            <a href="/img/캠프.jpg" target="_black"><img src="data5/images/_1.jpg" alt="" title="" id="wows5_2"/></a>
+                                        </li>
+                                        <li>
+                                            <a href="quantum.html"><img src="data5/images/_2.jpg" alt="slider html" title="" id="wows5_3"/></a>
+                                        </li>
+                                        <li>
+                                            <a href="ceo.html"><img src="data5/images/hosta.jpg" alt="" title="" id="wows5_4"/></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="ws_bullets">
+                                    <div>
+                                        <a href="#" title=""
+                                            ><span><img src="data5/tooltips/_0.jpg" alt="" />1</span></a
+                                        >
+                                        <a href="#" title=""
+                                            ><span><img src="data5/tooltips/_sm.jpg" alt="" />2</span></a
+                                        >
+                                        <a href="#" title=""
+                                            ><span><img src="data5/tooltips/_1.jpg" alt="" />3</span></a
+                                        >
+                                        <a href="#" title=""
+                                            ><span><img src="data5/tooltips/_2.jpg" alt="" />4</span></a
+                                        >
+                                        <a href="#" title=""
+                                            ><span><img src="data5/tooltips/hosta.jpg" alt="" />5</span></a
+                                        >
+                                    </div>
+                                </div>
+                                <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">javascript carousel</a> by WOWSlider.com v8.8m</div>
+                                <div class="ws_shadow"></div>
+                            </div>
+                            <script type="text/javascript" src="engine5/wowslider.js"></script>
+                            <script type="text/javascript" src="engine5/script.js"></script>
+                            <!-- End -->
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <div class="maply">
+                <div id="map" style="width:100%;height:70vh;margin: 30px 0px;"></div>
+                <p>
+                    <button onclick="setZoomable(false)">지도 확대/축소 끄기</button>
+                    <button onclick="setZoomable(true)">지도 확대/축소 켜기</button>
+                </p>
+            </div>
+            <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6ff80e0ab353e14ccfc6a8478b7cd146"></script>
+            <script>
+                var mapContainer = document.getElementById("map"), // 지도의 중심좌표
+                    mapOption = {
+                        center: new kakao.maps.LatLng(33.277867716538765, 126.36210249978085), // 지도의 중심좌표
+                        level: 3 // 지도의 확대 레벨
+                    };
+
+                var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+                function setZoomable(zoomable) {
+                    // 마우스 휠로 지도 확대,축소 가능여부를 설정합니다
+                    map.setZoomable(zoomable);
+                }
+
+                // 지도에 마커를 표시합니다
+                var marker = new kakao.maps.Marker({
+                    map: map,
+                    position: new kakao.maps.LatLng(33.277867716538765, 126.36210249978085)
+                });
+
+                // 커스텀 오버레이에 표시할 컨텐츠 입니다
+                // 커스텀 오버레이는 아래와 같이 사용자가 자유롭게 컨텐츠를 구성하고 이벤트를 제어할 수 있기 때문에
+                // 별도의 이벤트 메소드를 제공하지 않습니다
+                var content = '<div class="wrap">' + '    <div class="info">' + '        <div class="title">' + "            <p>힐링아일랜드 한의원</p>" + '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + "        </div>" + '        <div class="body">' + '            <div class="img">' + '                <img src="/img/map-img.png" width="73" height="70">' + "           </div>" + '            <div class="desc">' + '                <div class="ellipsis"><p>제주도 서귀포시 한창로110번길 61</p></div>' + '                <div class="jibun ellipsis">(우) 63526 (지번) 상창리1278</div>' + '                <div><a href="https://place.map.kakao.com/1535051642" target="_blank" class="link">큰지도/주소보기</a></div>' + "            </div>" + "        </div>" + "    </div>" + "</div>";
+
+                // 마커 위에 커스텀오버레이를 표시합니다
+                // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
+                var overlay = new kakao.maps.CustomOverlay({
+                    content: content,
+                    map: map,
+                    position: marker.getPosition()
+                });
+
+                // 마커를 클릭했을 때 커스텀 오버레이를 표시합니다
+                kakao.maps.event.addListener(marker, "click", function() {
+                    overlay.setMap(map);
+                });
+
+                // 커스텀 오버레이를 닫기 위해 호출되는 함수입니다
+                function closeOverlay() {
+                    overlay.setMap(null);
+                }
+            </script>
+
+            <div class="ad">
+                <a href="https://place.map.kakao.com/1535051642" target="_blank"><img src="img/map.jpg" alt="찾아 오시는길"/></a>
+                <a href="http://pf.kakao.com/_xjxexicT" target="_blank"><img src="img/banner.png" alt="카카오 문의"/></a>
+            </div>
+        </div>
+
+        <footer id="foott">
+            <div class="inner_footer">
+                <div class="logo_container">
+                    <img src="img/nav-logo.png" alt="nav-logo" />
+                    <p>© 2019 Healing Island All Rights Reserved (의료법인)<br /><br />TEL:064-794-0691 | FAX:064-794-2765</p>
+                    <a href="https://place.map.kakao.com/1535051642" target="_blank"
+                        ><address>
+                            제주특별자치도 서귀포시 상창리1278 (힐링아일랜드)
+                        </address></a
+                    >
+                </div>
+
+                <div class="footer_third">
+                    <ul class="social">
+                        <li>
+                            <a href="https://www.facebook.com/%ED%9E%90%EB%A7%81%EC%95%84%EC%9D%BC%EB%9E%9C%EB%93%9C-Healing-island-112844560139962/?modal=admin_todo_tour" target="_blank"><img src="img/social-icon/facebook.png" alt=""/></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/Healingislands" target="_blank"><img src="img/social-icon/twitter.png" alt=""/></a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/thehealingisland" target="_blank"><img src="img/social-icon/instagram.png" alt=""/></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/social-icon/blog.naver.png" alt=""/></a>
+                        </li>
+                        <li>
+                            <a href="http://pf.kakao.com/_xjxexicT" target="_blank"><img src="img/social-icon/kakaotalk_icon_high_res_title.png" alt=""/></a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UC9omLo9JiqgPcfFrwQHDDQQ/?guided_help_flow=5" target="_blank"><img src="img/social-icon/youtube.png" alt=""/></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        <!--
+        <ul class="add">
+            <li><img class="foot-img" src="img/nav-logo.png" alt="foot logo"></li>
+            <div class="addd">
+            <li>주소:제주특별자치도 서귀포시 상창리1278 (힐링아일랜드)<br></li>
+            <li></li>
+            <li><br>TEL:064-794-0691 | FAX:064-794-2765</li>
+            </div>
+        </ul>
+
+        <ul class="social">
+            <li><a href="#"><img src="img/social-icon/facebook.png" alt=""></a></li>
+            <li><a href="#"><img src="img/social-icon/twitter.png" alt=""></a></li>
+            <li><a href="https://instagram.com/thehealingisland" target="_blank"><img src="img/social-icon/instagram.png" alt=""></a></li>
+        </ul>
+-->
+
+        <script src="js/app.js"></script>
+        <script type="text/javascript" src="js/nav.js"></script>
+        <script type="text/javascript" src="js/dark-mode.js"></script>
+    </body>
+</html>
